@@ -2,13 +2,13 @@ from time import sleep
 import sys
 import cv2
 
-def run(type_, imageName, videoName):
+def run(type_, imageName, videoName, webcamNumber):
     #load pretrained data
     trained_face_data = cv2.CascadeClassifier("./haarcascade/cars.xml")
     trained_pedestrians_data = cv2.CascadeClassifier("./haarcascade/haarcascade_fullbody.xml")
 
     #capture video from webcam
-    webcam = cv2.VideoCapture(0)
+    webcam = cv2.VideoCapture(webcamNumber)
     img = cv2.imread("./image/cars _and_pedestrians/" + imageName)
     video = cv2.VideoCapture("./video/" + videoName)
 

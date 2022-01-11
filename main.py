@@ -4,6 +4,7 @@ import car_pedestrians_detection
 
 imageName = ""
 videoName = ""
+webcamNumber = 0
 
 def invalid():
     print("This mode does not exist")
@@ -32,7 +33,7 @@ print("----------------VIDEO(3)-------------------")
 type_ = str(input("Type: "))
 
 if type_ == "1":
-    pass
+    webcamNumber = int(input("The number of the webcam: "))
 elif type_ == "2":
     imageName = str(input("Name of the image: "))
 elif type_ == "3":
@@ -42,9 +43,9 @@ else:
 
 print("Program Loading....")
 if mode == "1":
-    facedetection.run(type_, imageName, videoName)
+    facedetection.run(type_, imageName, videoName, webcamNumber)
 elif mode == "2":
-    car_pedestrians_detection.run(type_, imageName, videoName)
+    car_pedestrians_detection.run(type_, imageName, videoName, webcamNumber)
 
 
 print("Code Completed")
